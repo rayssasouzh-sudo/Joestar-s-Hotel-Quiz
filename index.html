@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descubra Seu Stand</title>
+<meta name="description" content="Quiz de personalidade: descubra o Stand original que nasceria da sua alma.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="rays" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+  <section id="intro" class="screen active">
+    <p class="kicker">Um teste de alma</p>
+    <h1>DESCUBRA<br>SEU <span>STAND</span></h1>
+    <p class="sub">Todo espírito luta com uma sombra. Dez situações vão revelar a sua.</p>
+    <button class="btn big" id="start">DESCOBRIR MEU STAND</button>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="top">
+      <span id="counter" class="counter">1 / 10</span>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="bar"><i id="fill"></i></div>
+    </div>
+    <h2 id="qtext" tabindex="-1"></h2>
+    <div id="opts" class="opts" role="group" aria-labelledby="qtext"></div>
+    <button class="btn" id="next" disabled>PRÓXIMA</button>
+  </section>
+
+  <section id="loading" class="screen" aria-live="polite">
+    <div class="eye" aria-hidden="true"></div>
+    <h2>Analisando personalidade…</h2>
+    <p class="sub">Uma presença começa a tomar forma atrás de você.</p>
+  </section>
+
+  <section id="result" class="screen">
+    <article class="sheet" id="sheet" aria-live="polite"></article>
+    <div class="actions">
+      <button class="btn" id="share">COMPARTILHAR MEU RESULTADO</button>
+      <button class="btn ghost" id="copy">COPIAR MENSAGEM</button>
+      <button class="btn ghost" id="again">FAZER O QUIZ NOVAMENTE</button>
+    </div>
+    <p id="toast" class="toast" role="status"></p>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
